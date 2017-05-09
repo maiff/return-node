@@ -1,3 +1,5 @@
 const fse = require('fs-extra')
 
-module.exports = fse.readJson('urlList.json')
+module.exports = function () {
+  return fse.readJson('urlList.json')
+}

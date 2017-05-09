@@ -7,7 +7,7 @@ router.use(sendJson())
 
 router.get((req, res) => {
   // console.log(req.body)
-  get.then((obj ) => {
+  get().then((obj ) => {
     res.json(obj)
   })
 })
