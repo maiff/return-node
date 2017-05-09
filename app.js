@@ -1,4 +1,4 @@
-const MyExpress = require('./lib/myExpress')
+const MyExpress = require('./lib/MyExpress')
 
 const path = require('path')
 
