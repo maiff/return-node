@@ -14,6 +14,8 @@ app.use('/save', save)
 const get = require('./get')
 app.use('/get', get)
 
+const get = require('./lookup')
+app.use('/lookup', get)
 
 app.listen(port, () => {
   console.log(`listen on ${port}`)
