@@ -14,7 +14,7 @@ app.use('/save', save)
 const get = require('./get')
 app.use('/get', get)
 
-const lookup = require('./lookup')
+const lookup = require('./query')
 app.use('/lookup', lookup)
 
 app.listen(port, () => {
