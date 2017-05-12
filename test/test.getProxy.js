@@ -11,11 +11,11 @@ describe('get proxy', () => {
     app.listen(0, function () {
       request(app)
       .get('/get?q=fuck')
-      // .expect('Content-Type', /json/)
-      // .expect(200)
+      .expect('Content-Type', /json/)
+      .expect(200)
       .end((err, res) => {
         if (err) return done(err)
-        console.log(res.text)
+        // console.log(res.text)
         // assert.equal(JSON.parse(res.text).status, 1)
         done()
       })
