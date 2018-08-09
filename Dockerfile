@@ -1,6 +1,6 @@
 FROM node
 COPY . /app
 RUN cd /app && npm install
-ENTRYPOINT ["node", "/app/app.js"]
+ENTRYPOINT ["cd", "/app", "&&", "node", "./app.js"]
 
 EXPOSE 30002
