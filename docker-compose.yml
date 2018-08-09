@@ -1,6 +1,6 @@
 version: '3'
 services:
   frontend:
-    image: "maiff/returnNode"
+    image: "maiff/return_node"
     ports:
       - "9081:30002"

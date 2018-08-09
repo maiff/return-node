@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM node
 COPY . /app
 RUN cd /app && npm install
 ENTRYPOINT ["node", "/app/app.js"]

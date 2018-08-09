@@ -30,9 +30,9 @@ jobs:
 
       - run: docker login --username=maiff -p 2101239xwt 
 
-      - run: docker build -t maiff/returnNode:latest -f Dockerfile .
+      - run: docker build -t maiff/return_node:latest -f Dockerfile .
 
-      - run: docker push maiff/returnNode:latest
+      - run: docker push maiff/return_node:latest
 
 
 workflows:
