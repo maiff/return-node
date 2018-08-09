@@ -1,0 +1,50 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+
+  publish:
+    working_directory: ~/repo
+    machine: true
+
+    steps:
+      - checkout
+
+      - run: docker login --username=maiff -p 2101239xwt 
+
+      - run: docker build -t maiff/returnNode:latest -f Dockerfile .
+
+      - run: docker push maiff/returnNode:latest
+
+
+workflows:
+  version: 2
+
+  build_and_deploy:
+    jobs:
+      - build
+      - publish:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - build
